@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%=title%></title>
+    <link rel="stylesheet" type="text/css" href="/js/lib/bootstrap/css/bootstrap.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="/js/lib/bootstrap/css/bootstrap-responsive.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="/js/lib/prettify/styles/prettify.css"></link>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"></link>
+ </head>   
+ <body onload="prettyPrint()">
+ <div id="header">	
+	<% include header %>
+</div>
+<header class="header_sub"> 
+</header>
+<div id="content">
+ 	<%-body%>	
+</div>	
+
+ <div id="footer">
+ 	<% include footer %>
+ </div>
+
+ </body>
+ </html>

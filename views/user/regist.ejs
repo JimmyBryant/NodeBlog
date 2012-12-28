@@ -1,0 +1,19 @@
+<div class="m-logbg" style="position:absolute;top:0;left:0;height:100%;overflow:hidden;">
+<img id="bg" src="http://l.bst.126.net/pub/design/5785718146289108580.jpg" style="width: 100%; height: auto;  visibility: visible; opacity: .8;">
+</div>
+<div class="form login-form">
+<form method="post" action="/regist">
+<h4>Regist an acount</h4>
+<%if(errors){%>
+             <div class="error-messages">
+             	    <%for(var i in errors){%>
+             	     <p class="text-error"><%=errors[i]%></p>
+             	    <%}%>
+             </div>
+<%}%>
+<div class="form-field"><input name="email"  type="email" required placeholder="Email"/></div>
+<div class="form-field"><input name="password" type="password" required placeholder="Password"/></div>
+<div class="form-field"><input type="submit" class="btn submit" value="Sign Up"/></div>
+
+</from>
+</div>

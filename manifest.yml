@@ -1,0 +1,14 @@
+--- 
+applications: 
+- runtime: node08
+  instances: 1
+  name: mynblog
+  url: mynblog.${target-base}
+  memory: 64M
+  services: 
+    mongodb-mynblog: 
+      version: "2.0"
+      vendor: mongodb
+      tier: free
+  framework: node
+  path: .

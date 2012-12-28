@@ -1,0 +1,22 @@
+<div class="m-logbg" style="position:absolute;top:0;left:0;height:100%;overflow:hidden;">
+<img id="bg" src="http://l.bst.126.net/pub/design/6597494178144454276.jpg_1680x10000x0x90.jpg" style="width: 100%; height: auto;  visibility: visible; opacity: .8;">
+</div>
+<div>
+
+             <div class="form login-form">
+	<form method="post" action="/login">
+	 <h4>Welcome to Sign In</h4>
+                   <%if(errors){%>
+                 <div class="error-messages">
+                        <%for(var i in errors){%>
+                         <p class="text-error"><%=errors[i]%></p>
+                        <%}%>
+                 </div>
+                 <%}%>
+	 <div class="form-field"><input name="email"  type="email" required placeholder="Email"/></div>
+	 <div class="form-field"><input name="password" type="password" required placeholder="Password"/></div>
+	 <div class="form-field"><input type="submit" class="btn  submit" value="Sign In"/></div>
+
+	</from>
+	</div>
+</div>

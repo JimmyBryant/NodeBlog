@@ -1,0 +1,24 @@
+<script charset="utf-8" src="/js/lib/editor/kindeditor-min.js"></script>
+<script charset="utf-8" src="/js/lib/editor/lang/zh_CN.js"></script>
+<script>
+        var editor;
+        KindEditor.ready(function(K) {
+                editor = K.create('#editor_id');
+        });
+</script>
+<div class="container">
+	<div class="form">
+	 <form method="post" action="/new">
+	    <div class="form-field"><input type="text" name="name" class="long-input"/></div>
+	    <div class="form-field">
+		<textarea name="content"  id="editor_id" name="content" style="width:80%;height:600px;">
+
+		</textarea>
+	    </div>
+	    <div class="form-field">
+	    	<%include partial/category%>
+	    </div>
+	    <div class="form-field"><input type="submit" value="完成" class="btn"></div>
+	 </form>
+	 </div>
+</div>

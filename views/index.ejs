@@ -1,0 +1,37 @@
+
+
+<div class="container">
+   <div class="row">
+    <div class="span9">
+     <ul class="article-list">
+     <%for(var i=0,len=docs.length;i<len;i++){%>
+          <li class="article-item">
+          	<h4><a href="/article/<%=docs[i]._id%>"><%=docs[i].title%></a><em class="article-num"><%=i+1%></em></h4>
+          	<div class="article-partial"><%-docs[i].body%></div>
+          	<div class="article-info">
+          	   <%var d=new Date(docs[i].date)%>
+          	   <span><%=d.getFullYear()+'.'+(d.getMonth()+1)+'.'+d.getDate()%></span><span><%=(d.getHours()+8)%24+':'+d.getMinutes()%></span>
+                  <a href="/category/<%=encodeURIComponent(docs[i].category)%>"><span><i class="icon-tag"></i><%=docs[i].category%></span></a>
+                  <%if(locals.currentUser&&locals.currentUser.isAdmin){%>
+                      <a href="/edit/<%=docs[i]._id%>">edit</a>
+                  <%}%>
+
+          	</div>
+          </li>
+     <%}%>
+     </ul>
+  </div>
+  <div class="span3">
+       <div class="thumb-box">
+            <span class="large-thumb" title="Mr BitterGourd"><img src="/images/avatars/default.jpeg" alt="Mr BitterGourd"></img></span>
+            <%if(!locals.currentUser||!locals.currentUser.isAdmin){%>
+            <p>
+              <a class="btn btn-success btn-mini" href="/login">admin login</a>            
+            </p>
+            <%}%>
+       </div>
+  </div>
+  </div>
+</div>
+
+   

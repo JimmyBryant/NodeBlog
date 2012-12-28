@@ -1,0 +1,26 @@
+<script charset="utf-8" src="/js/lib/editor/kindeditor-min.js"></script>
+<script charset="utf-8" src="/js/lib/editor/lang/zh_CN.js"></script>
+<script>
+        var editor;
+        KindEditor.ready(function(K) {
+                editor = K.create('#article_editor',{
+                       filterMode:false
+                });
+        });
+</script>
+<div class="container">
+	<div class="form">
+	 <form method="post" action="/edit/<%=doc._id%>">
+	    <div class="form-field"><input type="text" name="title" value="<%=doc.title%>" class="long-input"/></div>
+	    <div class="form-field">
+		<textarea name="content"  id="article_editor" name="content" style="width:80%;height:600px;">
+		    <%- doc.body%>
+		</textarea>
+	    </div>
+	    <div class="form-field">
+	          <%include partial/category%>
+	    </div>
+	    <div class="form-field"><input type="submit" class="btn" value="保存文章"></div>
+	 </form>
+	 </div>
+</div>

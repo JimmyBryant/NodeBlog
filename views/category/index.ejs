@@ -1,0 +1,9 @@
+<div class="container">
+	<%if(categories){for(var i=0,len=categories.length;i<len;i++){%>
+		<span><%=i%>:<%=categories[i].name%></span>
+	<%}}%>
+	<form action="/category" method="post">
+		<input type="text" value="" name="category"/>
+		<div><input type="submit" value="save" class="btn"/></div>
+	</form>
+</div>
